@@ -9,8 +9,7 @@ authors = [
     {"name" = "NetNeutralNetworks","email" = "noc@ncubed.nl"}
 ]
 
-version = "1.0.15"
-# release =
+version = "2.0.0"
 
 readme = "README.md"
 # homepage = "https://lab.enough.community/singuliere/vault-keepass-import"
@@ -34,8 +33,14 @@ classifiers = [
 requires-python = ">=3.7"
 dependencies = [
     "hvac==0.11.2",
+    "hvac-cli==1.2.3",
     "pbr==5.10.0",
-    "pykeepass==4.0.3"
+    "pykeepass==4.0.3",
+]
+
+[project.optional-dependencies]
+build = [
+  'pyinstaller==5.3',
 ]
 
 [tool.setuptools]
