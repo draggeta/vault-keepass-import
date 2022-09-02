@@ -1,4 +1,0 @@
-hvac==0.11.2
-pbr==5.10.0
-pyinstaller==5.3
-pykeepass==4.0.3
