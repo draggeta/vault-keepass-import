@@ -13,7 +13,7 @@ import sys
 import hvac
 from pykeepass import PyKeePass
 
-from vault_keepass_import.version import __version__
+# from vault_keepass_import.version import __version__
 
 logging.basicConfig(format="%(asctime)s %(levelname)s %(message)s", level=logging.INFO)
 logger = logging.getLogger()
@@ -254,7 +254,7 @@ class Importer(object):
 
 def parser():
     parse = argparse.ArgumentParser()
-    parse.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
+    # parse.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     parse.add_argument(
         "--verbose", action="store_true", required=False, help="Verbose mode"
     )
