@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
-
-cd $SCRIPT_DIR
+SCRIPT_DIR=$(cd $(dirname "${BASH_SOURCE[0]}"); pwd)
 
 python -m venv .venv
-.venv/bin/python -m pip install -r ./requirements.txt
-pyinstaller --onefile --clean ./vault_keepass_import/main.py
-deactivate
+$SCRIPT_DIR/.venv/bin/python -m pip install $SCRIPT_DIR
