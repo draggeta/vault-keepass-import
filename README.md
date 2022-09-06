@@ -8,7 +8,7 @@ Adds one option to skip the default metadata with the `--skip-default-metadata` 
 
 ## Installation
 
-This package requires Python versions 3.7 and newer.
+> **NOTE:** This package requires Python versions 3.7 and newer.
 
 It is recommended to install the packages in a virtual environment.
 
@@ -28,12 +28,16 @@ To import a keepass file, run the following command:
 $HOME/local/bin/vault-keepass-import \
   --lowercase \
   --skip-default-metadata \
-  --mount-point secret --prefix organizations/<customer name> \
-  --password <keepass password> --token <vault token> \
+  --mount-point <secret mount point> \
+  --prefix <path under mount point> \
+  --address <vault server> \
+  --token <vault token> \
+  --password <keepass password> \
   <path to keepass file>
 ```
 
 * `lowercase`: change all path values to lowercase
 * `skip-default-metadata`: removes the KeePass UUID and time metadata from the entries imported into Vault
 * `prefix`: location to put the entries in: put them always into organizations/<customer name> in lower case
+* `password`: The password for the KeePass file that will be imported
 * `token`: a token with access to write the values, can be a root token
