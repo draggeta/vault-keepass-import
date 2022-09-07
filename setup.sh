@@ -10,7 +10,7 @@ $SCRIPT_DIR/.venv/bin/python -m pip install '.[build]'
 mkdir -p $HOME/local/bin
 
 # Build the executable and put it in the binary directory.
-$SCRIPT_DIR/.venv/bin/pyinstaller --clean --onefile -n vault-keepass-import --distpath $HOME/local/bin $SCRIPT_DIR/vault_keepass_import/main.py
+$SCRIPT_DIR/.venv/bin/pyinstaller --clean --onefile --collect-all hvac_cli -n vault-keepass-import --distpath $HOME/local/bin $SCRIPT_DIR/vault_keepass_import/main.py
 # $SCRIPT_DIR/.venv/bin/pyinstaller --onefile -n vault-keepass-import --distpath $HOME/local/bin $SCRIPT_DIR/vault_keepass_import/main.py
 
 echo "The 'vault-keepass-import' executable has been installed in '$HOME/local/bin/'."
