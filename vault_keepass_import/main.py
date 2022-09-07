@@ -51,7 +51,7 @@ class Importer(object):
     @staticmethod
     def get_path(prefix, entry):
         path = entry.parentgroup.path
-        if path[0] == "/":
+        if not path or path[0] == "/":
             path = prefix + entry.title
         else:
             path = prefix + "/".join(path) + "/" + entry.title
