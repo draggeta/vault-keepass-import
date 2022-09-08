@@ -50,11 +50,15 @@ class Importer(object):
 
     @staticmethod
     def get_path(prefix, entry):
+        if not entry.title:
+            title = "no_title"
+        else:
+            title = entry.title
         path = entry.parentgroup.path
         if not path or path[0] == "/":
-            path = prefix + entry.title
+            path = prefix + title
         else:
-            path = prefix + "/".join(path) + "/" + entry.title
+            path = prefix + "/".join(path) + "/" + title
         return path
 
     def export_entries(self, force_lowercase):
